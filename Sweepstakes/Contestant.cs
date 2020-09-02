@@ -10,16 +10,19 @@ namespace Sweepstakes
 {
     class Contestant
     {
-        public string firstName;
-        public string lastName;
-        public string emailAddress;
-        public int registrationNumber;
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string emailAddress { get; set; }
+        public int registrationNumber { get; set; }
+
+        //public string firstName {get; set;}
         public Contestant()
         {
-            firstName = UserInterface.GetUserInput("Please enter your first name: ");
-            lastName = UserInterface.GetUserInput("Please enter your first name: ");
-            emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
-            //registrationNumber = List<> count++;
+            //firstName = UserInterface.GetUserInput("Please enter your first name: ");
+            //lastName = UserInterface.GetUserInput("Please enter your first name: ");
+            //emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
+            //registrationNumber = +1;
+            //Contestant.Dictonary.count + 1; //registrationNumber = List<> count++;???
         }
     }
 }

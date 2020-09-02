@@ -15,5 +15,6 @@ namespace Sweepstakes
             string result = Console.ReadLine();
             return result;
         }
+         
     }
 }

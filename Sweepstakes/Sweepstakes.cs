@@ -8,23 +8,33 @@ namespace Sweepstakes
 {
     class Sweepstakes
     {
-        Dictionary<TKey, TValue> sweepstakes = new Dictionary<TKey, TValue>;
+        public Dictionary<int, Contestant> contestants;
+        public string name;
+        public string Name;
+        public int registrationNumber = 0;
 
-        public Sweepstakes()
+        public Sweepstakes(string name)
         {
-
-        }
-        public void PrintContestantInfo(Contestant contestant)
-        {
-
+            contestants = new Dictionary<int, Contestant>();
         }
         public void RegisterContestant(Contestant contestant)
         {
-
+            contestant.firstName = UserInterface.GetUserInput("Please enter your first name: ");
+            contestant.lastName = UserInterface.GetUserInput("Please enter your first name: ");
+            contestant.emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
+            contestant.registrationNumber = +1;
+        }
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine(contestant.firstName + contestant.lastName);
+            Console.WriteLine(contestant.emailAddress);
+            Console.WriteLine(contestant.registrationNumber);
         }
         public void PickWinner()
         {
-
+            //Contestant;
+            //Random random = new Random();
+            //Winner = random.Next();
         }
 
     }
