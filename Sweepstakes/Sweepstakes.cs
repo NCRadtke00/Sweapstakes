@@ -17,26 +17,27 @@ namespace Sweepstakes
         public Sweepstakes(string name)
         {
             contestants = new Dictionary<int, Contestant>();
+            this.name = UserInterface.GetUserInput(" What would you like the name of this Sweepstakes to be? ");
         }
         public void RegisterContestant(Contestant contestant)
         {
-            contestant.firstName = UserInterface.GetUserInput("Please enter your first name: ");
-            contestant.lastName = UserInterface.GetUserInput("Please enter your first name: ");
-            contestant.emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
-            contestant.registrationNumber = +1;
+            contestants.Add(contestants.Count, contestant);
         }
         public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine(contestant.firstName + contestant.lastName);
-            Console.WriteLine(contestant.emailAddress);
-            Console.WriteLine(contestant.registrationNumber);
+            UserInterface.DisplayContestant(contestant.lastName, contestant.firstName, contestant.emailAddress, contestant.registrationNumber);
+
         }
-        public void PickWinner()
+        public Contestant PickWinner()
         {
             //Contestant;
             Random random = new Random();
-            winningNumber = random.Next(1, contestants.Count);
+            int winningNumber = random.Next(1, contestants.Count);
             Console.WriteLine(winningNumber);
+            Contestant contestant = contestants[winningNumber];
+            //UserInterface.DisplayWinner();
+            return contestant;
+
         }
 
     }

@@ -18,10 +18,11 @@ namespace Sweepstakes
         //public string firstName {get; set;}
         public Contestant()
         {
-            //firstName = UserInterface.GetUserInput("Please enter your first name: ");
-            //lastName = UserInterface.GetUserInput("Please enter your first name: ");
-            //emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
-            //registrationNumber = +1;
+            firstName = UserInterface.GetUserInput("Please enter your first name: ");
+            lastName = UserInterface.GetUserInput("Please enter your first name: ");
+            emailAddress = UserInterface.GetUserInput("Please enter your E-mail address: ");
+            this.registrationNumber = registrationNumber +1;
+            //going back to putting GetUserInput here, should fix the issue im having trying to add contestant to list in sweepstakes class 
             //Contestant.Dictonary.count + 1; //registrationNumber = List<> count++;???
         }
     }
