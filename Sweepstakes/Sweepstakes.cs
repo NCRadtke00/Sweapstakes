@@ -12,6 +12,7 @@ namespace Sweepstakes
         public string name;
         public string Name;
         public int registrationNumber = 0;
+        public int winningNumber;
 
         public Sweepstakes(string name)
         {
@@ -33,8 +34,9 @@ namespace Sweepstakes
         public void PickWinner()
         {
             //Contestant;
-            //Random random = new Random();
-            //Winner = random.Next();
+            Random random = new Random();
+            winningNumber = random.Next(1, contestants.Count);
+            Console.WriteLine(winningNumber);
         }
 
     }
